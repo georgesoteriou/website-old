@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample Website</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    $(function() {
+        console.log('Created by George Soteriou. INFO: George@Soteriou.me');
+        $('.box1').html(0).hide();
+        $('.box2').html(0).hide();
+        $('.box3').html(0).hide();
+        $('.group').data('num', 1);
+        $('.second').attr("disabled", true);
+
+
+        $('.child-clicker').click(function() {
+            if ($(this).closest('.group').data('num') === 1) {
+                $(this).children('.box1').html(parseInt($(this).children('.box1').html()) + 1).show();
+            } else if ($(this).closest('.group').data('num') === 2) {
+                $(this).children('.box2').html(parseInt($(this).children('.box2').html()) + 1).show();
+            }
+        });
+
+        $('.group > .first').click(function() {
+            $(this).parent().data('num', 2);
+            $(this).parent().find('.child-clicker').children('.box1').each(function(index) {
+                if ($(this).html() == 0) {
+                    $(this).show();
+                }
+            });
+            $(this).parent().find('.second').attr("disabled", false);
+            $(this).attr("disabled", true);
+        });
+
+
+        $('.group > .second').click(function() {
+            $(this).parent().data('num', 3);
+            var Totala = 0;
+            var Totalb = 0;
+            var vala = 0;
+            var valb = 0;
+            var shower = 0;
+            $(this).parent().find('.child-clicker').children('.box1').each(function(index) {
+                Totala = Totala + parseInt($(this).html());
+            });
+            $(this).parent().find('.child-clicker').children('.box2').each(function(index) {
+                Totalb = Totalb + parseInt($(this).html());
+            });
+            $(this).parent().find('.child-clicker').children('.box1').each(function(index) {
+                vala = parseInt($(this).html());
+                $(this).data('valo', vala);
+                shower = Math.floor(vala / Totala * 100);
+                if (isNaN(shower)) {
+                    $(this).html(0 + '%');
+                } else {
+                    $(this).html(shower + '%');
+                }
+            });
+            $(this).parent().find('.child-clicker').children('.box2').each(function(index) {
+                valb = parseInt($(this).html());
+                $(this).data('valo', valb);
+                shower = Math.floor(valb / Totalb * 100);
+                if (isNaN(shower)) {
+                    $(this).html(0 + '%').show();
+                } else {
+                    $(this).html(shower + '%').show();
+                }
+            });
+            $(this).parent().find('.child-clicker').each(function() {
+                var t1 = ($(this).children('.box1').data('valo') + $(this).children('.box2').data('valo'));
+                var t = Math.floor((t1 / (Totala + Totalb)) * 100);
+                if (isNaN(t)) {
+                    $(this).children('.box3').html(0 + '%').show();
+                } else {
+                    $(this).children('.box3').html(t + '%').show();
+                }
+            });
+            $(this).attr("disabled", true);
+        });
+
+        $('.group > .reset').click(function() {
+            $(this).parent().find('.child-clicker').children('.box1').html(0).hide();
+            $(this).parent().find('.child-clicker').children('.box2').html(0).hide();
+            $(this).parent().find('.child-clicker').children('.box3').html(0).hide();
+            $(this).parent().data('num', 1);
+            $(this).parent().find('.second').attr("disabled", true);
+            $(this).parent().find('.first').attr("disabled", false);
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="group size1">
+        <h1 style="margin:auto; text-align:center;">Build up</h1>
+        <div class="child-clicker square noselect">
+            Clear Ball to the Left Flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	  <div class="rect-group">
+            <div class="child-clicker rect-half noselect">
+                Pumb ball into the box
+                <br>
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+	      <div class="child-clicker rect-half noselect">
+                Outside Centre Area
+                <br>
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+        </div>
+	  </div>
+        <div class="child-clicker square noselect">
+            Clear Ball to the Right Flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Pass to the Left Winger
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	  <div class="child-clicker thin noselect">
+            <br><br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+   	  <div class="child-clicker thin noselect">
+            Advanced Playmaking
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	   <div class="child-clicker thin noselect">
+            <br><br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Pass to the Right Winger
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Pass to the Left Midfielder
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	  <div class="child-clicker thin noselect">
+            <br><br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+   	  <div class="child-clicker thin noselect">
+            Exploit the middle
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	   <div class="child-clicker thin noselect">
+            <br><br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Pass to the Right Midfielder
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Pass to the Left Full Back
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	  <div class="child-clicker thin noselect">
+            <br><br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+   	  <div class="child-clicker thin noselect">
+            DMC Playmaking
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	   <div class="child-clicker thin noselect">
+            <br><br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Pass to the Right Full Back
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Pass to the Left Defender
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	  <div class="rect-group">
+            <div class="child-clicker rect-half noselect">
+                Outside Centre Area
+                <br>
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+	      <div class="child-clicker rect-half noselect">
+                Pass to the GK
+                <br>
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+           </div>
+	  </div>
+        <div class="child-clicker square noselect">
+            Pass to the Right Defender
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>  
+        <button class="first">Half time</button>
+        <button class="second">Done</button>
+        <button class="reset">Reset</button>
+    </div>
+    <div class="group size1">
+        <h1 style="margin:auto;text-align:center;">GK Distribution</h1>
+        <div class="child-clicker square noselect">
+            Clear ball to flanks
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Pumb into box
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Clear ball to flanks
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Exploit the left flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Exploit the middle
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Exploit the right flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Left defender
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            DMC
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Right Defender
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker shape noselect">
+            Play out defence
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker rect mar noselect">
+            Goal Keeper
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <button class="first">Half Time</button>
+        <button class="second">Done</button>
+        <button class="reset">Reset</button>
+    </div>
+<div class = "size1">
+    <div class="group" style="margin-bottom:50px;">
+        <h1 style="margin:auto;text-align:center;">Attack</h1>
+         <div class="child-clicker squarea noselect">
+            Clear ball to flanks
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker recta noselect">
+            Pumb into box
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker squarea noselect">
+            Clear ball to flanks
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square-t noselect">
+            Exploit the left flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	   <div class="child-clicker square-t noselect">
+            Exploit the left flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker recta noselect">
+            Exploit the middle
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+       <div class="child-clicker square-t noselect">
+            Exploit the left flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+	   <div class="child-clicker square-t noselect">
+            Exploit the left flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker shape noselect">
+            Play out defence
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <button class="first">Half Time</button>
+        <button class="second">Done</button>
+        <button class="reset">Reset</button>
+    </div>
+    <div class="group">
+        <h1 style="margin:auto;text-align:center;">Crosses</h1>
+        <div class="child-clicker thin noselect">
+            Low
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker thin noselect">
+            Float
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <button class="first" style = "width:25%;margin-left:5%">Half Time</button>
+        <button class="second" style = "width:25%;margin-left:5%">Done</button>
+        <button class="reset" style = "width:25%;margin-left:5%">Reset</button>
+    </div>
+        
+    <div class="group" style = "float:right">
+        <h1 style="margin:auto;text-align:center;">Cross Target</h1>
+        <div class="child-clicker thin noselect">
+            Near Post
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker thin noselect">
+            Far Post
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker thin noselect">
+            6 Yeard Box
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <button class="first">Half Time</button>
+        <button class="second" style = "width:20%">Done</button>
+        <button class="reset">Reset</button>
+    </div> 
+</div>
+
+    <div class="group size1">
+        <h1 style="margin:auto;text-align:center;">Defence Zones</h1>
+        <div class="child-clicker square noselect">
+            Press down to the Right Defender
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Press the GK
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Press down to the Left Flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+	   <div class="child-clicker square noselect">
+            Press down to the Right Full Back
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Press down to the DMC
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Press down to the Left Full Back
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+	   <div class="child-clicker square noselect">
+            Press down to the Right Midfielder
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Press down to the middle
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Press down to the Left Midfielder
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Press down to the Right Winger
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Press down to the Advanced Playmaking
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Press Down to the Left Winger
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+        <div class="child-clicker square noselect">
+            Press down to the Right Flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker rect noselect">
+            Standoff
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <div class="child-clicker square noselect">
+            Press Down to the Left Flank
+            <br>
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+        </div>
+        <br>
+
+        <button class="first">Half Time</button>
+        <button class="second">Done</button>
+        <button class="reset">Reset</button>
+    </div>
+    <a href='football.html' download>Click to download</a>
+</body>
+</html>

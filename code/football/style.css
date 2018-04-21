@@ -1,0 +1,175 @@
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .box {
+        text-align: center;
+        font-size: 1.2em;
+        margin: auto;
+        width: 100%;
+        height: 100%
+    }
+
+    .box1,
+    .box2,
+    .box3 {
+        text-align: center;
+        float: left;
+        margin: 0;
+        width: 50%;
+        height: 27%;
+    }
+
+    .box3 {
+        margin-left: 25%;
+    }
+
+    .child-clicker {
+        text-align: center;
+        font-size: 1em;
+        margin: 5px;
+        
+    }
+
+    .group {
+        float: left;
+
+    }
+
+    .size1{
+	   margin: 20px;
+        margin-top: 30px;
+        height: 750px;
+        width:500px;
+        background-color: #eee;
+        float: left;
+        padding:10px;
+    }
+
+    .square {
+        width: 100px;
+        height: 120px;
+        background-color: #95c0db;
+	  float: left;
+    }
+
+    .square.col {
+        background-color: #ccceee;
+    }
+
+    .squarea {
+        width: 140px;
+        height: 120px;
+        background-color: #95c0db;
+	  float: left;
+    }
+
+
+    .thin {
+        width: 83px;
+        height: 120px;
+        background-color: #b0da97;
+	  float: left;
+    }
+
+    .square-t {
+        width: 65px;
+        height: 120px;
+        background-color: #b0da97;
+	  float: left;
+    }
+
+    .big-square {
+        width: 200px;
+        height: 170px;
+        background-color: #ccceee;
+        float: left;
+    }
+
+    .big-square-side {
+        height: 170px;
+        width: 150px;
+        background-color: #cccaaa;
+        float: left;
+    }
+
+    .rect {
+        width: 270px;
+        height: 120px;
+        background-color: #ccceee;
+        float: left;
+    }
+
+    .recta {
+        width: 190px;
+        height: 120px;
+        background-color: #ccceee;
+        float: left;
+    }
+
+
+    .rect-half {
+        width: 270px;
+        height: 55px;
+        background-color: #ccceee;
+	  margin:0 0 5px 0;
+    }
+    .rect-group {
+	  float:left;
+	  margin:5px;
+    }
+
+    .rect.mar {
+        margin-left: 115px;
+        height: 80px;
+	  margin-bottom:30px;
+    }
+
+    .rect2 {
+        width: 95px;
+        height: 120px;
+        background-color: #ccceee;
+        float: left;
+    }
+
+    .long-rect {
+        width: 200px;
+        height: 80px;
+        background-color: #aaaaaa;
+        float: left;
+    }
+
+    .shape {
+        width: 490px;
+        height: 80px;
+        background-color: #aaaaaa;
+        float: left;
+    }
+
+    .done {
+        margin-left: 30%;
+        width: 15%;
+    }
+
+    .first {
+        margin-left: 10%;
+        width: 20%;
+        margin-top:2%;
+    }
+
+    .second {
+        margin-left: 10%;
+        width: 15%;
+        margin-top:2%;
+    }
+
+    .reset {
+        margin-left: 10%;
+        width: 20%;
+        margin-top:2%;
+    }

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="jquery-3.2.1.min.js"></script>
+	<title>Roll me</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		.block{
+			width: 300px;
+			height: 200px;
+			background-color: none;
+			display: inline-table;
+			margin: 10px;
+			padding: 0;
+			border-style: solid;
+		}
+		.title{
+			display: inline-table;
+			width: 100%;
+			height: 25px;
+			text-align: center;
+			text-decoration: underline;
+		}
+		.die{
+			display: inline-block;
+			width: 50%;
+			height: 175px;
+			position: relative;
+		}
+		.number{
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			margin: 0;
+			text-align: center;
+			font-size: 3em;
+
+		}
+		.other{
+			display: inline-block;
+			width: 50%;
+			height: 175px;
+			position: relative;
+
+		}
+		.roll{
+			position: relative;
+			top: -3px;
+			left: 44%;
+			height: 25px;
+			margin: 0;
+		}
+		h3{
+			margin: 0;
+		}
+		ul{
+			position: absolute;
+			font-size: 1.2em;
+			margin: 2px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			var die = [4,6,8,10,12,20,100];
+			die.forEach(function(num) {
+				addDie(num);
+			})
+
+			$('#add').on('click',function(event) {
+				var num = $('#new').val();
+				console.log(num);
+				addDie(num);
+				apply();
+				$('#new').val("");
+			});
+
+			apply();
+
+			function apply() {
+				$('.roll').each(function() {
+					block = $(this).closest('.block');
+					block.find('h3').html("d" + block.attr('value'));
+					random(block);
+				}).on('click', function() {
+					block = $(this).closest('.block');
+					random(block);
+					updateAdd(block);
+				});
+				$('.c').change(function() {
+					block = $(this).closest('.block');
+					updateAdd(block);
+				});
+			}
+			function updateAdd(block) {
+				var sum = 0;
+				block.find('input:checked').each(function(index, el) {
+					sum += parseInt($(this).next().html());
+				});
+				block.find('.sum').html(sum);
+			}
+			function random(block) {
+				var rand = 1 + Math.floor(Math.random() * block.attr('value'));
+				var last = rand;
+				var curret;
+				block.find('.in').each(function() {
+					curret = $(this).html();
+					$(this).html(last);
+					last = curret;
+				});
+			}
+			function addDie(num) {
+				$('.main').append('<div class="block" value = "'+num+'"><div class="title"><h3>d4</h3></div><div class="die"><ul><div style="font-size: 1.4em">Current</div><li style="font-size: 1.4em"><input type="checkbox" class="c"><span class= "in">0</span></li>History<li><input type="checkbox" class="c"><span class= "in">0</span></li><li><input type="checkbox" class="c"><span class= "in">0</span></li><li><input type="checkbox" class="c"><span class= "in">0</span></li><li><input type="checkbox" class="c"><span class= "in">0</span></li><li><input type="checkbox" class="c"><span class= "in">0</span></li></ul></div><div class="other"><ul>Sum:<div class="sum">0</div></ul></div><button class="roll">Roll</button></div>');
+
+			}
+
+		});
+	</script>
+</head>
+<body>
+	<span class="main"></span>
+	<span style="margin: 20px">
+		<input type="number" id="new"><button id="add">Add</button>
+	</span>
+</body>
+</html>
