@@ -1,4 +1,5 @@
 $(function(){
+  console.log("hello there ;)");
   //navigation
   $('.page').hide();
   if(window.location.hash == ""){

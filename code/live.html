@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>George</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -19,7 +19,6 @@
         text-align: center;
         cursor: default;
     }
-    
     .hovereffect .overlay {
         width: 100%;
         height: 100%;
@@ -32,14 +31,12 @@
         -webkit-transition: all .4s ease-in-out;
         transition: all .4s ease-in-out
     }
-    
     .hovereffect img {
         display: block;
         position: relative;
         -webkit-transition: all .4s linear;
         transition: all .4s linear;
     }
-    
     .hovereffect h2 {
         text-transform: uppercase;
         color: #fff;
@@ -54,7 +51,6 @@
         transition: all .2s ease-in-out;
         padding: 10px;
     }
-    
     .hovereffect a.info {
         text-decoration: none;
         display: inline-block;
@@ -69,22 +65,18 @@
         margin: 50px 0 0;
         padding: 7px 14px;
     }
-    
     .hovereffect a.info:hover {
         box-shadow: 0 0 5px #fff;
     }
-    
     .hovereffect:hover img {
         -ms-transform: scale(1.2);
         -webkit-transform: scale(1.2);
         transform: scale(1.2);
     }
-    
     .hovereffect:hover .overlay {
         opacity: 1;
         filter: alpha(opacity=100);
     }
-    
     .hovereffect:hover h2,
     .hovereffect:hover a.info {
         opacity: 1;
@@ -93,18 +85,21 @@
         -webkit-transform: translatey(0);
         transform: translatey(0);
     }
-    
     .hovereffect:hover a.info {
         -webkit-transition-delay: .2s;
         transition-delay: .2s;
     }
-
     .jumbotron{
     	text-align: center;
     }
-    iframe{
-        width: 100%;
-        height: 100%
+
+    .col-lg-3, .col-md-4, .col-sm-6, .col-xs-12{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .col-lg-3{
+      max-height: 25%;
     }
     </style>
 </head>
@@ -115,7 +110,26 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="hovereffect">
-            <iframe src="/rockets/"></iframe>
+            <img class="img-responsive" src="assets/vote.png" alt="">
+            <div class="overlay">
+                <h2>DoCSoc WebMaster</h2>
+                <a class="info" href="http://georgesoteriou.com/vote">Vote</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/think.png" alt="">
+            <div class="overlay">
+                <h2>Think Learning Centre</h2>
+                <a class="info" href="http://thinklearningcentre.com">Think</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/rockets.JPG" alt="">
             <div class="overlay">
                 <h2>Genetic Algorithm</h2>
                 <a class="info" href="rockets/index.html">Rockets</a>
@@ -124,15 +138,58 @@
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
         <div class="hovereffect">
-            <img class="img-responsive" src="tree.JPG" alt="">
+            <img class="img-responsive" src="assets/tree.JPG" alt="">
             <div class="overlay">
                 <h2>Fractals</h2>
                 <a class="info" href="tree/index.html">Tree</a>
             </div>
         </div>
     </div>
-    <br>
-    <a href="live.html">live test</a>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/clock.JPG" alt="">
+            <div class="overlay">
+                <h2>Binary</h2>
+                <a class="info" href="bc/index.html">Clock</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/circle.JPG" alt="">
+            <div class="overlay">
+                <h2>Loops</h2>
+                <a class="info" href="circle/index.html">Circle</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/draw.png" alt="">
+            <div class="overlay">
+                <h2>Node.js Draw Game</h2>
+                <a class="info" href="http://draw.code.georgesoteriou.com">Draw Together</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/roll.png" alt="">
+            <div class="overlay">
+                <h2>DnD dice</h2>
+                <a class="info" href="http://roll.code.georgesoteriou.com">Roll</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="assets/cate.png" alt="">
+            <div class="overlay">
+                <h2>Is CATe Up</h2>
+                <a class="info" href="http://iscateup.co.uk">CATe Up</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
