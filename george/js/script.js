@@ -2,8 +2,8 @@ $(function(){
   //navigation
   $('.page').hide();
   if(window.location.hash == ""){
-	$('#about').show();
-	$(".nav-link[value='#about']").addClass("active");
+	$('#home').show();
+	$(".nav-link[value='#home']").addClass("active");
   }else{
         $(window.location.hash).show();
 	$(".nav-link[value='"+window.location.hash+"']").addClass("active");
@@ -18,7 +18,7 @@ $(function(){
   });
   $( window ).on( 'hashchange', function() {
    if(window.location.hash == ""){
-    value = '#about';
+    value = '#home';
    }else{
     value = window.location.hash;
    }
