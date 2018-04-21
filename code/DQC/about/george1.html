@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>George Pereteanu</title>
+<link href="george1/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<script>
+// Global variables
+var text = "George Pereteanu";
+var typeWriter;
+var index = 0;
+
+// Typewriting effect
+typeWriter = setInterval(function() {
+	document.querySelector(".typewriter").textContent += text[index];
+
+	index += 1;
+
+	if (index > text.length -1) {
+		clearInterval(typeWriter);
+	}
+
+}, 100);
+		
+
+		
+var text2 = "CV";
+var typeWriter2;
+var index2 = 0;
+
+
+// Typewriting effect
+typeWriter2 = setInterval(function() {
+	document.querySelector("#b1").textContent += text2[index2];
+
+	index2 += 1;
+
+	if (index2 > text2.length -1) {
+		clearInterval(typeWriter2);
+	}
+time =1;
+}, 200);
+		 
+var text3 = "contact";
+var typeWriter3;
+var index3 = 0;
+		
+
+// Typewriting effect
+
+typeWriter3 = setInterval(function() {
+	document.querySelector("#b2").textContent += text3[index3];
+
+	index3 += 1;
+
+	if (index3 > text3.length -1) {
+		clearInterval(typeWriter3);
+	}
+
+}, 200);
+		
+</script>
+	
+	
+	<header class="header"><div class="typewriter" id="typedtext"></div></header>
+<main >
+	
+<div class="fade-in profile"><img src="george1/profil.jpg" id="profile"/></div>
+	
+	<div class="container">
+		<a href="george1/george.pdf" target="_blank" id="b1"></a>
+		<a href="george1/contact.html" id="b2"></a>
+	</div>
+</main>
+
+</html>
