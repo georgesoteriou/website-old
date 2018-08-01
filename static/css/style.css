@@ -1,0 +1,35 @@
+.page{
+  margin-top:100px;
+  max-width:100%;
+}
+body{
+  background-color: #222233;
+  color: white !important;
+  font-family: 'Open Sans', sans-serif;
+}
+.container{
+  margin-top: 50px;
+}
+.nav-link{
+  cursor: pointer;
+}
+.img-fluid{
+  width:100%;
+}
+.navbar{
+  font-size:1.5rem;
+}
+
+.h1_large{
+  font-size: 5rem;
+}
+
+.gray{
+  color: DarkGray;
+}
+
+@media (max-width: 1000px){
+.container {
+    max-width: 100%;
+}
+}

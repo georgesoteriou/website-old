@@ -1,0 +1,17 @@
+include layout.pug
+nav.navbar.navbar-expand.fixed-top.navbar-dark.bg-dark
+  #navbarNavDropdown.navbar
+    ul.navbar-nav
+      // NAVIGATION
+      li.nav-item
+        a.nav-link(href = "/") Home
+      li.nav-item
+        a.nav-link.active About
+      li.nav-item
+        a.nav-link(href = "/contact") Contact
+.page
+  .container
+    h1.text-center George Soteriou
+    br
+    .row
+      canvas#gitGraph
