@@ -9,7 +9,7 @@ $(function(){
   " - Completed Primary School @ Junior School Nicosia",
   " - Accepted @ English School Nicosia",
   " - Started Highschool @ English School Nicosia",
-  " - Passed Ham Radio exam and got a Lisense (5B4AJZ)",
+  " - Passed Ham Radio exam and got a License (5B4AJZ)",
   " - Elected for Ham Radio Club (5B4ES) President for 4 years",
   " - Volunteered and Helped organise Hack{Cyprus} with CEL",
   " - Created and Organized Hack{Cyprus}Code School with CEL",
