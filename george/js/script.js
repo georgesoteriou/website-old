@@ -1,35 +1,4 @@
 $(function(){
-  console.log("hello there ;)");
-  //navigation
-  $('.page').hide();
-  if(window.location.hash == ""){
-	$('#home').show();
-	$(".nav-link[value='#home']").addClass("active");
-  }else{
-        $(window.location.hash).show();
-	$(".nav-link[value='"+window.location.hash+"']").addClass("active");
-  }
-  $(".nav-link").on('click',function(){
-    var value = $(this).attr("value");
-    window.location.hash = value;
-    $('.page').hide();
-    $(value).show();
-    $(".active").removeClass("active");
-    $(this).addClass("active");
-  });
-  $( window ).on( 'hashchange', function() {
-   if(window.location.hash == ""){
-    value = '#home';
-   }else{
-    value = window.location.hash;
-   }
-    $('.page').hide();
-    $(value).show();
-    $('.active').removeClass('active');
-    $('.nav-link[value="'+value+'"]').addClass("active");
-  });
-
-
   //GitGraph
   var gitgraph = new GitGraph({author: ""});
   gitgraph.template.colors = ["white","#ff8000","#94C7B2", "#4FBCF3"];
