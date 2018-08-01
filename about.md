@@ -19,6 +19,8 @@ permalink: /about
     </ul>
   </div>
 </nav>
+<script src="george/js/gitgraph.min.js"></script>
+<script src="george/js/script.js"></script>
 <div class="page" id="about">
   <div class="container">
     <h1 class="text-center">George Soteriou</h1>
