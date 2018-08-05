@@ -1,0 +1,24 @@
+---
+layout: default
+title: Projects
+permalink: /projects
+---
+
+nav.navbar.navbar-expand.fixed-top.navbar-dark.bg-dark
+  #navbarNavDropdown.navbar
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link.active Home
+      li.nav-item
+        a.nav-link(href='/about.html') About
+      li.nav-item
+        a.nav-link(href='/contact.html') Contact
+.page
+  .container
+    ul
+      li 
+        a(href="https://thinklearningcentre.com") Think Learning Centre
+      | {% for project in site.projects %}
+      li 
+        a(href= "https://georgesoteriou.github.io/{{project}}/index.html") {{project}}
+      | {% endfor %}

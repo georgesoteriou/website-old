@@ -1,0 +1,23 @@
+---
+layout: default
+title: About
+permalink: /about
+---
+
+nav.navbar.navbar-expand.fixed-top.navbar-dark.bg-dark
+  #navbarNavDropdown.navbar
+    ul.navbar-nav
+      li.nav-item
+        a.nav-link(href='/') Home
+      li.nav-item
+        a.nav-link.active About
+      li.nav-item
+        a.nav-link(href='/contact.html') Contact
+script(src='public/js/gitgraph.min.js')
+script(src='public/js/script.js')
+#about.page
+  .container
+    h1.text-center George Soteriou
+    br
+    .row
+      canvas#gitGraph
