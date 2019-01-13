@@ -21,8 +21,8 @@ $(function(){
   " - Joined Cyprus Army as Corporal",
   " - Created Think Learning Centre Website",
   " - Completed Army Service",
-  " - Accepted @ Imperial Collage London",
-  " - Started Computing @ Imperial Collage London",
+  " - Accepted @ Imperial College London",
+  " - Started Computing @ Imperial College London",
   " - Volunteered for ICHack18",
   " - Took part in Google Hashcode 2018",
   " - Run and Elected for DoCSoc WebMaster 2018-19",
@@ -49,7 +49,7 @@ $(function(){
   Think.commit(commits[14]);
   master.commit(commits[15])
   .commit(commits[16]);
-  var Imperial = master.branch("Imperial Collage");
+  var Imperial = master.branch("Imperial College");
   Imperial.commit(commits[17])
   .commit(commits[18]);
   master.commit(commits[19]);
