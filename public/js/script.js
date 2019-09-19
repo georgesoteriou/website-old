@@ -5,8 +5,9 @@ $(function() {
     "white",
     "#ff8000",
     "#94C7B2",
-    "#4FBCF3",
-    "#225590"
+    "#0091D4",
+    "#225590",
+    "#009edc"
   ];
   gitgraph.template.commit.message.font = "normal 16pt Arial";
 
@@ -26,8 +27,8 @@ $(function() {
     .commit(" - Volunteer and Help organise Hack{Cyprus} with CEL")
     .commit(" - Create and Organize Hack{Cyprus}Code School with CEL");
   English.commit(" - Create and was President of Tecnology club for 2 years");
-  master.commit(" - Start working as Web Developer @ Think Learning Centre");
   var Think = master.branch("Think Learning Centre");
+  Think.commit(" - Start working as Web Developer @ Think Learning Centre");
   English.commit(" - Complete A-Level: Double Maths with A*, A")
     .commit(" - Complete A-Level: Computing with A*")
     .commit(" - Complete A-Level: Physics with A")
