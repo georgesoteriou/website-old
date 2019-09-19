@@ -44,7 +44,7 @@ $(function() {
   DoCSoc.commit(" - Organize ICHack 2019");
   DoCSoc.commit(" - Organize Google Hashcode 2019 at Imperial");
   Imperial.commit(" - Complete Year 2");
-  DoCSoc.commit(" - Run and get elected for DoCSoc WebMaster 2018-19");
+  DoCSoc.commit(" - Run and get elected for DoCSoc WebMaster 2019-20");
   master.commit(" - Work at Goldman Sachs as Spring Technology Intern");
   var Cisco = master.branch("Cisco");
   Cisco.commit(" - Start work at Cisco as Platform Engineer Intern");
