@@ -3,6 +3,6 @@ netlify:
 	bliss build 
 
 test:
-	nvm use 8.12
+	n 8.12
 	npm install jekyll-bliss -g 
 	bliss build 
