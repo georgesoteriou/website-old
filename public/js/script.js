@@ -11,12 +11,10 @@ $(function() {
   ];
   gitgraph.template.commit.message.font = "normal 15pt Arial";
 
-  var master = gitgraph;
-  master.branch("master");
+  var master = gitgraph.branch("master");
   master.commit(" - Initial Commit (26/05/1997)");
   master.commit(" - Complete Primary School @ Junior School Nicosia");
-  var English = master;
-  English.branch("English School");
+  var English = master.branch("English School");
   English.commit(" - Get Accepted @ English School Nicosia");
   English.commit(" - Start Highschool @ English School Nicosia");
   master.commit(" - Pass Ham Radio exam and get a License (5B4AJZ)");
