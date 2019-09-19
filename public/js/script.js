@@ -13,10 +13,10 @@ $(function() {
   var master = gitgraph
     .branch("master")
     .commit(" - Initial Commit (26/05/1997)")
-    .commit(" - Complete Primary School @ Junior School Nicosia")
-    .commit(" - Get Accepted @ English School Nicosia");
+    .commit(" - Complete Primary School @ Junior School Nicosia");
   var English = master
     .branch("English School")
+    .commit(" - Get Accepted @ English School Nicosia")
     .commit(" - Start Highschool @ English School Nicosia");
   master.commit(" - Pass Ham Radio exam and get a License (5B4AJZ)");
   English.commit(
@@ -43,16 +43,14 @@ $(function() {
   Imperial.commit(" - Volunteer for ICHack18");
   master.commit(" - Take part in Google Hashcode 2018");
   var DoCSoc = Imperial.branch("DoCSoc");
-  DoCSoc.commit(" - Run and get elected for DoCSoc WebMaster 2018-19");
   Imperial.commit(" - Complete Year 1");
+  DoCSoc.commit(" - Run and get elected for DoCSoc WebMaster 2018-19");
   DoCSoc.commit(" - Create Sponsors Portal v1");
   DoCSoc.commit(" - Organize ICHack 2019");
   DoCSoc.commit(" - Organize Google Hashcode 2019 at Imperial");
-  DoCSoc.merge(Imperial);
-  DoCSoc = Imperial.branch("DoCSoc");
+  Imperial.commit(" - Complete Year 2");
   DoCSoc.commit(" - Run and get elected for DoCSoc WebMaster 2018-19");
   master.commit(" - Work at Goldman Sachs as Spring Technology Intern");
-  Imperial.commit(" - Complete Year 2");
   var Cisco = master.branch("Cisco");
   Cisco.commit(" - Start work at Cisco as Platform Engineer Intern");
   Cisco.commit(" - Create AWS Cisco Kubernetes Cluster");
